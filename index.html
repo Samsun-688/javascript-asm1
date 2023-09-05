@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="name"></p>
+    <p id="city"></p>
+    <p id="sdt"></p>
+    <p id="bornYear"></p>
+    <p id="message">This is Message</p>
+
+    <button id="hien">Message</button>
+
+    <script>
+        alert("Chào mừng bạn đến với ứng dụng JavaScript đầu tiên");
+
+        var theName = document.getElementById("name");
+        var theCity = document.getElementById("city");
+        var theSdt = document.getElementById("sdt");
+        var theBornYear = document.getElementById("bornYear");
+        var theMessage = document.getElementById("message");
+
+        // nhập tên
+        var ten = prompt("Hãy nhập tên: ");
+        theName.innerHTML = "Tên: " + ten;
+        // nhập thành phố
+        var thanhPho = prompt("Hãy nhập thành phố: ");
+        theCity.innerHTML = "Thành phố: " + thanhPho;
+        // nhập sdt
+        var sdt = prompt("Hãy nhập sdt: ");
+        theSdt.innerHTML = "Sdt: " + sdt;
+
+
+
+        // Nhập năm sinh và check năm sinh
+        var yeucaunhap = true;
+
+        while (yeucaunhap) {
+            var namSinh = prompt("Hãy nhập năm sinh: ");
+            var now = new Date().getFullYear();
+            if (namSinh > now) {
+                theBornYear.innerHTML = "Có sự nhầm lẫn năm sinh, Năm nay là" + now;
+            } else {
+                theBornYear.innerHTML = "Năm sinh: " + namSinh;
+                yeucaunhap = false;
+            }
+        }
+
+        // Mặc định Messgae ẩn, click Message hiện 
+        document.getElementById("message").style.display = "none";
+        document.getElementById("hien").onclick = hienAn;
+        function hienAn() {
+            theMessage.style.display = "block";
+        }
+
+    </script>
+</body>
+
+</html>
